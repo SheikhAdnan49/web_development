@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            margin: 0;
+        }
+
+        .calculator {
+            border: 2px solid #c30707;
+            padding: 20px;
+            border-radius: 20px;
+            background-image: url('./images/calculator.jpg') ;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #value {
+            width: 100%;
+            height: 40px;
+            font-size: 22px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            background-color: #e06a6a;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="value" >
+        <br><br>
+        <div class="buttons">
+            <button onclick="document.getElementById('value').value =''">AC</button>
+            <button onclick="document.getElementById('value').value += '%'">&percnt;</button>
+            <button onclick="deleteLastEntry()">Del</button>
+            <button onclick="document.getElementById('value').value +='/'">÷</button>
+            
+            <button onclick="document.getElementById('value').value +='1'"> 1 </button>
+            <button onclick="document.getElementById('value').value +='2'"> 2 </button>
+            <button onclick="document.getElementById('value').value +='3'"> 3 </button>
+            <button onclick="document.getElementById('value').value +='+'"> + </button>
+            
+            <button onclick="document.getElementById('value').value +='4'"> 4</button>
+            <button onclick="document.getElementById('value').value +='5'"> 5</button>
+            <button onclick="document.getElementById('value').value +='6'"> 6</button>
+            <button onclick="document.getElementById('value').value +='-'"> -</button>
+            
+            <button onclick="document.getElementById('value').value +='7'"> 7</button>
+            <button onclick="document.getElementById('value').value +='8'"> 8</button>
+            <button onclick="document.getElementById('value').value +='9'"> 9</button>
+            <button onclick="document.getElementById('value').value +='*'"> ×</button>
+            
+            <button onclick="document.getElementById('value').value +='00'"> 00</button>
+            <button onclick="document.getElementById('value').value +='0'"> 0</button>
+            <button onclick="document.getElementById('value').value +='.'"> .</button>
+            <button onclick="document.getElementById('value').value = eval(document.getElementById('value').value)">=</button>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        function deleteLastEntry() {
+            var inputField = document.getElementById('value');
+            inputField.value = inputField.value.slice(0, -1);
+        }
+    </script>
+
+</body>
+
+</html>
